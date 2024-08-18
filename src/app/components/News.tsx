@@ -9,12 +9,14 @@ const NewsContent = (newsData: Array<object>) => {
         newsData.map((item: any, key: any) => {
           return (
             <div className="news-item" key={key}>
-              <div className={`news-type ${item.type.toLowerCase()}`}>
-                {item.type}
-              </div>
-              <div className="news-content-wrapper">
+              <div className="news-block">
+                <div className={`news-type ${item.type.toLowerCase()}`}>
+                  {item.type}
+                </div>
                 <div className="news-date">{item.date}</div>
+              </div>
 
+              <div className="news-content-wrapper">
                 <div className="news-description">
                   {item.title}, {item.description}
                 </div>

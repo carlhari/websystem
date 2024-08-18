@@ -9,6 +9,9 @@
   padding: 0;
   list-style-type: none;
   text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
 }
 
 html {
@@ -25,7 +28,36 @@ body {
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+nextjs-portal {
+  display: none;
+}
+
 /* Navigation */
+
+.nav-wrapper {
+  width: 100%;
+}
 .nav {
   background-color: #fff000;
   display: flex;
@@ -34,14 +66,16 @@ body {
   padding: 18px 14rem;
 }
 
-.nav h1 {
+.nav .h1 {
   font-size: 20px;
+  font-weight: bold;
+  color: black;
 }
 
 .nav ul {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 3rem;
 }
 
 .nav ul li {
@@ -62,6 +96,14 @@ body {
 .nav ul li a {
   font-size: 18px;
   color: black;
+}
+
+.mobile {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 /* SLIDER CAROUSEL */
@@ -95,7 +137,6 @@ body {
 
 .splide__arrow {
   opacity: 1 !important;
-  box-shadow: 10px !important;
 }
 
 .splide__arrow svg {
@@ -127,7 +168,7 @@ body {
 }
 
 .service div {
-  width: 50%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,6 +181,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5px;
 }
 
 .service-content img {
@@ -231,6 +273,7 @@ body {
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
+  gap: 10px;
 }
 
 .news-type {
@@ -251,6 +294,16 @@ body {
 .news-type.recruit {
   font-size: 25px;
   background-color: #009de2;
+}
+
+.news-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-date {
+  font-size: 22px;
 }
 
 .news-content {
@@ -331,4 +384,540 @@ body {
 
 .footer p {
   font-size: 20px;
+}
+
+/* SIGNIN */
+
+.bg-signin {
+  background-image: url("/assets/mypage/header.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-signin div {
+  font-size: 50px;
+  font-weight: bold;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.signin-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signin-content form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.user div,
+.pass div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.signin-content input[type="text"],
+.signin-content input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.signin-content .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signin-content .btns button {
+  padding: 10px 30px;
+  background-color: #ff1493;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.signin-content .btns button:hover {
+  background-color: #ff4aa1;
+}
+
+.signin-content .btns div {
+  margin: 0;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.signin-content .btns p:hover {
+  text-decoration: underline;
+}
+
+.privacy-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 460px;
+  padding: 20px;
+  gap: 10px;
+}
+
+.privacy-wrap a {
+  color: #1155cc;
+}
+
+.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* DASHBOARD */
+
+.bg-dashboard {
+  background-image: url("/assets/mypage/header.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-dashboard div {
+  font-size: 50px;
+  font-weight: bold;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.dashboard-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-content .card {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 60px;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-content .card div {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.dashboard-content .card button {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background-color: #e3007f;
+  border-radius: 5px;
+  padding: 10px 20px;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
+}
+
+/* MOBILE */
+
+/* Start with the largest screens (2X Extra large) */
+@media (max-width: 1535px) {
+  .splide__track {
+    zoom: 100%;
+  }
+
+  .service {
+    padding: 80px 0px;
+  }
+
+  .service div {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .service-content {
+    width: 40% !important;
+  }
+
+  .service-content img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Extra large (xl) */
+@media (max-width: 1279px) {
+  .splide__arrow--prev {
+    left: 1em !important;
+  }
+
+  .splide__arrow--next {
+    right: 1em !important;
+  }
+
+  .nav {
+    padding: 18px 4rem;
+  }
+
+  .footer {
+    padding: 20px 50px;
+  }
+
+  .aboutus h1 {
+    font-size: 50px;
+    color: white;
+  }
+
+  .aboutus p {
+    font-size: 22px;
+  }
+}
+
+/* Large (lg) */
+@media (max-width: 1023px) {
+  .splide__track {
+    zoom: 80%;
+  }
+
+  .news-content {
+    width: 90%;
+  }
+  .nav {
+    padding: 15px 1.5rem;
+  }
+}
+
+/* Medium (md) */
+@media (max-width: 767px) {
+  .aboutus p {
+    font-size: 18px;
+  }
+
+  .nav ul {
+    gap: 1rem;
+  }
+
+  .splide__track {
+    zoom: 50%;
+  }
+}
+
+/* Small (sm) */
+@media (max-width: 639px) {
+  .splide__track {
+    zoom: 40%;
+  }
+
+  .splide__arrow--next,
+  .splide__arrow--prev {
+    width: 40px !important;
+  }
+
+  .service-content {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+
+  .aboutus p {
+    font-size: 18px;
+    text-align: left;
+  }
+  .aboutus {
+    padding: 20px;
+  }
+
+  .news {
+    padding: 20px 10px;
+  }
+
+  .news-content {
+    width: 100%;
+  }
+
+  .news-item {
+    flex-wrap: wrap;
+  }
+
+  .news-type {
+    width: 150px;
+  }
+
+  .news-type.recruit,
+  .news-type.information {
+    font-size: initial;
+  }
+
+  .news-date {
+    font-size: 16px;
+  }
+
+  .news-description {
+    font-size: 16px !important;
+    text-align: justify;
+  }
+
+  .contact div {
+    width: 90%;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+
+  .footer h1 {
+    font-size: 22px;
+  }
+
+  .footer p {
+    font-size: 16px;
+  }
+
+  .nav ul li a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav ul li:last-child {
+    background-color: white;
+    font-size: 14px;
+    padding: 5px 7px;
+  }
+
+  .service h1 {
+    font-size: 38px;
+  }
+
+  .aboutus p {
+    line-height: 40px;
+  }
+}
+
+/* Extra small (xs) */
+@media (max-width: 480px) {
+  .splide__track {
+    zoom: 25%;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  .nav-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .mobile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 0;
+    position: fixed;
+    z-index: 100;
+    transition: 0.5s ease;
+    overflow: hidden;
+  }
+
+  .mobile.open {
+    height: 100vh;
+  }
+
+  .mobile ul {
+    width: 100%;
+  }
+
+  .mobile ul li {
+    border-bottom: 0.5px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+  }
+
+  .mobile ul li a {
+    color: #fff000;
+  }
+
+  .mobile ul li:last-child {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile ul li:last-child a {
+    width: 70%;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 30px; /* Width of the menu */
+    height: 20px; /* Height of the menu */
+  }
+
+  .bar {
+    display: block;
+    background-color: black; /* Color of the bars */
+    height: 3px; /* Thickness of the bars */
+    width: 100%;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+  }
+
+  .bar1 {
+    top: 0;
+  }
+
+  .bar2 {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bar3 {
+    bottom: 0;
+  }
+
+  .hamburger-menu.open .bar1 {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform-origin: center;
+  }
+
+  .hamburger-menu.open .bar2 {
+    display: none;
+  }
+
+  .hamburger-menu.open .bar3 {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform-origin: center;
+  }
+
+  .service h1 {
+    font-size: 30px;
+  }
+
+  .service-content div {
+    font-size: 18px;
+  }
+  .service-content p {
+    font-size: 14px;
+  }
+
+  .aboutus h1 {
+    font-size: 40px;
+  }
+
+  .aboutus p {
+    font-size: 16px;
+  }
+  .aboutus {
+    padding: 10px;
+  }
+
+  .news h1 {
+    font-size: 40px;
+  }
+
+  .signin-content form {
+    padding: 20px;
+    width: 90%;
+  }
+  .privacy-wrap {
+    width: 90%;
+    padding: 10px 0;
+  }
+
+  .signin-content form .btns {
+    flex-wrap: wrap;
+  }
+
+  .signin-content form .btns button,
+  .signin-content form .btns div {
+    width: 100%;
+  }
+
+  .dashboard-content .card {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 400px) {
 }
